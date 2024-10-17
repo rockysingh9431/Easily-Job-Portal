@@ -1,0 +1,116 @@
+<div class="container post-job p-3 mx-auto w-50 form-box my-5 rounded-md">
+  <h2 style="color: #181642" class="text-center mb-3">Post a New Job</h2>
+
+  <form action="/createJob" method="post">
+    <!-- Job Category Selection -->
+    <div class="input-group mb-3">
+      <select
+        required
+        name="category"
+        class="form-select"
+        aria-label="Job Category"
+      >
+        <option selected disabled>Select Job Category</option>
+        <option value="Tech">Tech</option>
+        <option value="Non-Tech">Non Tech</option>
+      </select>
+    </div>
+
+    <!-- Job Designation Selection -->
+    <div class="input-group mb-3">
+      <select
+        required
+        name="title"
+        class="form-select"
+        aria-label="Job Designation"
+      >
+        <option selected disabled>Select Job Designation</option>
+        <option value="HR">HR</option>
+        <option value="SDE">SDE</option>
+        <option value="DevOps">DevOps</option>
+        <option value="MERN Developer">MERN Developer</option>
+        <option value="MEAN Developer">MEAN Developer</option>
+        <option value="JAVA Developer">JAVA Developer</option>
+        <option value="Front-End Developer">Front-End Developer</option>
+        <option value="Back-End Developer">Back-End Developer</option>
+        <option value="Full-Stack Developer">Full-Stack Developer</option>
+      </select>
+    </div>
+
+    <!-- Job Location Input -->
+    <div class="mb-3">
+      <label for="jobLocation" class="form-label">Enter Job Location</label>
+      <div class="input-group">
+        <input
+          required
+          name="location"
+          type="text"
+          class="form-control"
+          id="jobLocation"
+          placeholder="Enter job location"
+        />
+      </div>
+    </div>
+
+    <!-- Company Name Input -->
+    <div class="input-group mb-3">
+      <span class="input-group-text">Company Name</span>
+      <input
+        required
+        name="companyname"
+        type="text"
+        class="form-control"
+        placeholder="Enter company name"
+      />
+    </div>
+
+    <!-- Salary and Number of Openings -->
+    <div class="input-group mb-3">
+      <input
+        required
+        name="salary"
+        type="text"
+        class="form-control"
+        placeholder="Enter salary"
+      />
+      <span class="input-group-text">Total Positions</span>
+      <input
+        required
+        name="numberofopenings"
+        type="number"
+        class="form-control"
+        placeholder="Total no of openings"
+      />
+    </div>
+
+    <!-- Skills Required and Apply By Date -->
+    <div class="input-group mb-3">
+      <select
+        required
+        multiple
+        name="skillsrequired"
+        class="form-select"
+        aria-label="Skills Required"
+      >
+        <option selected disabled>Select Skills Required for This Job</option>
+        <option value="React">React</option>
+        <option value="NodeJs">NodeJs</option>
+        <option value="Angular">Angular</option>
+        <option value="MongoDB">MongoDB</option>
+        <option value="SQL">SQL</option>
+        <option value="Express">Express</option>
+        <option value="Java">Java</option>
+        <option value="SpringBoot">SpringBoot</option>
+        <option value="C++">C++</option>
+        <option value="Data Structures & Algo">Data Structures & Algo</option>
+      </select>
+    </div>
+    <label class="input-group-text">Apply By</label>
+    <input name="applyby" type="date" class="form-control" />
+
+    <!-- Submit Button -->
+    <button class="w-100 mb-3 mt-2 btn btn-md btn-success" type="submit">
+      Submit
+    </button>
+  </form>
+</div>

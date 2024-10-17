@@ -1,0 +1,208 @@
+<div class="container d-flex p-5">
+  <div class="home-info">
+    <h1 class="head">A comprehensive platform for reliable</h1>
+    <h2 class="sub-head">job opportunities and internships.</h2>
+    <h5 class="head-3">Get Discovered. Get Hired.</h5>
+
+    <a href="/jobs" class="seek-recruit-btn">
+      <button class="seeker-recruiter-btn">I'm Job Seeker</button>
+    </a>
+
+    <!-- Recruiter Registration Modal -->
+    <div
+      class="modal fade"
+      id="recruiterRegisterModal"
+      aria-hidden="true"
+      aria-labelledby="recruiterRegisterModalLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h1 class="modal-title fs-4" id="recruiterRegisterModalLabel">
+              Experience Easily...!!! Register and Get Started...
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="recruiterRegisterForm" action="/register" method="POST">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="recruiterName" class="form-label"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="recruiterName"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="recruiterEmail" class="form-label"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="recruiterEmail"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="recruiterPassword" class="form-label"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="recruiterPassword"
+                    name="password"
+                    placeholder="Create a password"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="recruiterConfirmPassword" class="form-label"
+                    >Confirm Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="recruiterConfirmPassword"
+                    name="confirmPassword"
+                    placeholder="Confirm your password"
+                    required
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <!-- Button to open Recruiter Login Modal -->
+            <button
+              class="btn btn-success"
+              data-bs-target="#recruiterLoginModal"
+              data-bs-toggle="modal"
+            >
+              Login as Recruiter
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="submit"
+              form="recruiterRegisterForm"
+              class="btn btn-primary"
+            >
+              Register
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recruiter Login Modal -->
+    <div
+      class="modal fade"
+      id="recruiterLoginModal"
+      aria-hidden="true"
+      aria-labelledby="recruiterLoginModalLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h1 class="modal-title fs-4" id="recruiterLoginModalLabel">
+              Recruiter Login
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="recruiterLoginForm" action="/login" method="post">
+              <div class="mb-3">
+                <label for="recruiterEmail" class="form-label"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="recruiterEmail"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="recruiterPassword" class="form-label"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="recruiterPassword"
+                  name="password"
+                  placeholder="Enter your password"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="submit"
+              form="recruiterLoginForm"
+              class="btn btn-primary"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to open Recruiter Registration Modal -->
+    <%if (user) {%>
+    <a href="/jobs" class="seek-recruit-btn"
+      ><button class="seeker-recruiter-btn">I'm Recruiter</button></a
+    >
+    <%}else{%><button
+      class="seeker-recruiter-btn"
+      data-bs-target="#recruiterRegisterModal"
+      data-bs-toggle="modal"
+    >
+      I'm Recruiter
+    </button>
+    <%}%>
+  </div>
+  <div class="image">
+    <img src="/images/banner.png" alt="Placeholder Image" />
+  </div>
+</div>

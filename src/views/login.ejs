@@ -1,0 +1,35 @@
+<div
+  class="container p-3 login-form mx-auto w-50 form-box my-4 rounded p-5 shadow-sm bg-light"
+>
+  <h3 class="text-center mb-3" style="color: #343a40">Recruiter Login</h3>
+  <form action="/login" method="post">
+    <!-- Email Input -->
+    <div class="form-group mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        required
+        name="email"
+        type="email"
+        class="form-control form-control-sm"
+        id="email"
+        placeholder="Enter your email"
+      />
+    </div>
+
+    <!-- Password Input -->
+    <div class="form-group mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        required
+        name="password"
+        type="password"
+        class="form-control form-control-sm"
+        id="password"
+        placeholder="Enter your password"
+      />
+    </div>
+
+    <!-- Submit Button -->
+    <button class="w-100 btn btn-success btn-sm" type="submit">Login</button>
+  </form>
+</div>

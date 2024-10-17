@@ -1,0 +1,94 @@
+<div class="container post-job p-3 mx-auto w-50 form-box my-5 rounded-md">
+  <h2 style="color: #181642" class="text-center mb-3">Update Job</h2>
+
+  <form id="updateJobForm" action="/job/update/<%- job.id %>" method="POST">
+    <!-- Job Category Selection -->
+    <div class="input-group mb-3">
+      <select required name="category" class="form-select" aria-label="Job Category">
+        <option selected disabled>
+          <%= job.category %>
+        </option>
+        <option value="Tech">Tech</option>
+        <option value="Non-Tech">Non-Tech</option>
+      </select>
+    </div>
+
+    <!-- Job Designation Selection -->
+    <div class="input-group mb-3">
+      <select required name="title" class="form-select" aria-label="Job Designation">
+        <option selected disabled>
+          <%= job.title %>
+        </option>
+        <option value="HR">HR</option>
+        <option value="SDE">SDE</option>
+        <option value="DevOps">DevOps</option>
+        <option value="MERN Developer">MERN Developer</option>
+        <option value="MEAN Developer">MEAN Developer</option>
+        <option value="JAVA Developer">JAVA Developer</option>
+        <option value="Front-End Developer">Front-End Developer</option>
+        <option value="Back-End Developer">Back-End Developer</option>
+        <option value="Full-Stack Developer">Full-Stack Developer</option>
+      </select>
+    </div>
+
+    <!-- Job Location Input -->
+    <div class="mb-3">
+      <label for="jobLocation" class="form-label">Job Location</label>
+      <div class="input-group">
+        <input required name="location" type="text" class="form-control" id="jobLocation"
+          placeholder="Enter job location" value="<%= job.location %>" />
+      </div>
+    </div>
+
+    <!-- Company Name Input -->
+    <div class="input-group mb-3">
+      <span class="input-group-text">Company Name</span>
+      <input required name="companyname" type="text" class="form-control" placeholder="Enter company name"
+        value="<%= job.companyname %>" />
+    </div>
+
+    <!-- Salary and Number of Openings -->
+    <div class="input-group mb-3">
+      <input required name="salary" type="text" class="form-control" placeholder="Enter salary"
+        value="<%= job.salary %>" />
+      <span class="input-group-text">Number of Openings</span>
+      <input required name="numberofopenings" type="number" class="form-control" placeholder="Total no of openings"
+        value="<%= job.numberofopenings %>" />
+    </div>
+
+    <!-- Skills Required and Apply By Date -->
+    <div class="input-group mb-3">
+      <select required multiple name="skillsrequired" class="form-select" aria-label="Skills Required">
+        <option disabled>Select Skills Required for This Job</option>
+        <option value="React" <%= job.skillsrequired.includes('React') ? 'selected' : '' %>>React</option>
+        <option value="NodeJs" <%= job.skillsrequired.includes('NodeJs') ? 'selected' : '' %>>NodeJs</option>
+        <option value="Angular" <%= job.skillsrequired.includes('Angular') ? 'selected' : '' %>>Angular</option>
+        <option value="MongoDB" <%= job.skillsrequired.includes('MongoDB') ? 'selected' : '' %>>MongoDB</option>
+        <option value="SQL" <%= job.skillsrequired.includes('SQL') ? 'selected' : '' %>>SQL</option>
+        <option value="Express" <%= job.skillsrequired.includes('Express') ? 'selected' : '' %>>Express</option>
+        <option value="Java" <%= job.skillsrequired.includes('Java') ? 'selected' : '' %>>Java</option>
+        <option value="SpringBoot" <%= job.skillsrequired.includes('SpringBoot') ? 'selected' : '' %>>SpringBoot</option>
+        <option value="C++" <%= job.skillsrequired.includes('C++') ? 'selected' : '' %>>C++</option>
+        <option value="Data Structures & Algo" <%= job.skillsrequired.includes('Data Structures & Algo') ? 'selected'
+          : '' %>>Data Structures & Algo</option>
+      </select>
+    </div>
+    <label class="input-group-text">Apply By</label>
+    <input name="applyby" type="date" class="form-control" value="<%= job.applyby %>" />
+
+    <!-- Submit Button -->
+    <button class="w-100 mb-3 mt-2 btn btn-md btn-success" type="submit">
+      Submit
+    </button>
+  </form>
+</div>
+
+<script>
+  // Confirmation alert before submitting the form
+  document.getElementById("updateJobForm").addEventListener("submit", function (event) {
+    const confirmSubmit = confirm("Do you want to submit the form?");
+    if (!confirmSubmit) {
+      event.preventDefault(); // Prevent form submission if user cancels
+    }
+  });
+</script>
